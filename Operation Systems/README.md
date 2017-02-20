@@ -1,0 +1,1 @@
+Source.c is the solution for all 3 exercises.
