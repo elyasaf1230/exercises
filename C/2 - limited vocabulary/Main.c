@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 	Leaf *dictionary = NULL;
 	int temp;
 
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 
 	if (argc != 3)
 	{
@@ -44,9 +44,9 @@ int main(int argc, char* argv[])
 	}
 
 	//openning dictionary file:
-	strcpy_s(fileNameDict, sizeof(fileNameDict), argv[1]);
+	strcpy_s((char*)fileNameDict, sizeof(fileNameDict), argv[1]);
 	printf("%s\n", fileNameDict);
-	fileDict = fopen(fileNameDict, "r");
+	fileDict = fopen((char*)fileNameDict, "r");
 	if (fileDict == NULL)
 	{
 		printf("failed open dictionary file!");
@@ -54,9 +54,9 @@ int main(int argc, char* argv[])
 	}
 
 	//open text file
-	strcpy_s(fileNameText, sizeof(fileNameText), argv[2]);
+	strcpy_s((char*)fileNameText, sizeof(fileNameText), argv[2]);
 	printf("%s\n", fileNameText);
-	fileText = fopen(fileNameText, "r");
+	fileText = fopen((char*)fileNameText, "r");
 	if (fileText == NULL)
 	{
 		printf("Failed to open text file!");
